@@ -19,7 +19,7 @@ message.classList.add('messageStyle');
 
 document.addEventListener('keydown', (e) => {
 
-    if(e.key == 'Enter' && game_state != 'Play'){
+    if(e.key == ' ' && game_state != 'Play'){
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
             e.remove();
         });
@@ -48,7 +48,7 @@ function play(){
             }else{
                 if(bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && bird_props.left + bird_props.width > pipe_sprite_props.left && bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && bird_props.top + bird_props.height > pipe_sprite_props.top){
                     game_state = 'End';
-                    message.innerHTML = 'GAME OVER!'.fontcolor('red') + '<br>Press "Enter" to Restart';
+                    message.innerHTML = 'GAME OVER!'.fontcolor('red') + '<br>Press "Spacebar" to Restart';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     sound_die.play();
