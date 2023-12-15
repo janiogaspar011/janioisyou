@@ -4,10 +4,9 @@ let img = document.getElementById('bird-1');
 let sound_point = new Audio('Point.mp3');
 let sound_die = new Audio('Die.mp3');
 
-// getting bird element properties
+
 let bird_props = bird.getBoundingClientRect();
 
-// This method returns DOMReact -> top, right, bottom, left, x, y, width and height
 let background = document.querySelector('.background').getBoundingClientRect();
 
 let score_val = document.querySelector('.score_val');
@@ -49,7 +48,7 @@ function play(){
             }else{
                 if(bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && bird_props.left + bird_props.width > pipe_sprite_props.left && bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && bird_props.top + bird_props.height > pipe_sprite_props.top){
                     game_state = 'End';
-                    message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Press Enter To Restart';
+                    message.innerHTML = 'GAME OVER!'.fontcolor('red') + '<br>Press "Enter" to Restart';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     sound_die.play();
